@@ -1,0 +1,22 @@
+{
+  "name": "wechat-node",
+  "version": "1.0.0",
+  "description": "wechat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SailorCai/Wechat-node.git"
+  },
+  "keywords": [
+    "wechat"
+  ],
+  "author": "SailorCai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SailorCai/Wechat-node/issues"
+  },
+  "homepage": "https://github.com/SailorCai/Wechat-node#readme"
+}
