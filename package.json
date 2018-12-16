@@ -18,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/SailorCai/Wechat-node/issues"
   },
-  "homepage": "https://github.com/SailorCai/Wechat-node#readme"
+  "homepage": "https://github.com/SailorCai/Wechat-node#readme",
+  "dependencies": {
+    "mongoose": "^5.4.0",
+    "fs.promised": "^3.0.0",
+    "koa": "^2.3.0",
+    "koa-body": "^2.3.0",
+    "koa-compose": "^4.0.0",
+    "koa-route": "^3.2.0",
+    "koa-static": "^4.0.1"  }
 }

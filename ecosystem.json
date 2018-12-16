@@ -1,0 +1,29 @@
+{
+	"apps": [
+		{
+			"name": "wechat-node",	// 应用名字
+			"script": "app.js", // 启动的脚本或入口文件
+			"env": {	// 启动的时候需要传进去的变量
+				"COMMON_VARIABLE": "true"
+			},
+			"env_production": {	// 生产环境的变量
+				"NODE_ENV": "production"	// node环境为"生产环境"
+			}
+		}
+	],
+	"deploy": {	// 部署的任务配置
+		"production": {	//任务名字
+			"user": "lunar_manager",	// 服务器上我们用来发布应用的user
+			"host": ["39.108.98.11"],	// 如果有多个服务器可在数组中传入多个ip
+			"port": "36666",    // 服务器端口
+			"ref": "origin/master",		// 仓库、分支名
+			//"repo": "git@gitee.com:logan_lg/node_movie.git",	// 仓库地址，码云私有仓库的ssh地址
+			"path": "/www/wechat-node/production",	// 要把项目部署到服务器的哪个目录下面
+			"ssh_options": "StrictHostKeyChecking=no", // 把key校验取消掉
+			"post-deploy": "npm install --registry=https://registry.npm.taobao.org && pm2 startOrRestart ecosystem.json --env production",
+			"env": {
+				"NODE_ENV":	"production"
+			}
+		}
+	}
+}
