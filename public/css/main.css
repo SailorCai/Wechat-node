@@ -1,0 +1,13 @@
+*{
+    margin:0;
+    margin:0;
+}
+.top_box img{
+    width:100%;
+}
+.content_box{
+    padding:10px;
+    text-align: center;
+    font-size:18px;
+    line-height:25px;
+}
