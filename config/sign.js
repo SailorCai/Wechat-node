@@ -5,10 +5,17 @@ const urlStr = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_creden
 
 var token_str = urlStr.replace('APPID', appID).replace('APPSECRET', appsecret);
 
-var getToken = function () {
+var getToken = function (cb) {
+    let chunks = [];
     https.get(token_str, res => {
         res.on('data', (d) => {
-            process.stdout.write(d);
+            chunks.push(d);
+            // console.log(JSON.parse(d.toString()).access_token);
+        });
+        res.on('end', () => {
+            let buffer = Buffer.concat(chunks);
+            let result = JSON.parse(buffer);
+            cb(result);
         });
     }).on('error', err => {
         console.error(err);

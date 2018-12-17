@@ -12,7 +12,9 @@ module.exports = function(app) {
         ctx.response.body = ctx.request.query.echostr;
     }));
 
-    app.use(router.get('/get_token', ctx => {
-        SIGN.getToken(); 
+    app.use(router.get('/get_token', async ctx => {
+        await SIGN.getToken(data => {
+            ctx.response.body = data;
+        }); 
     }));
 };
